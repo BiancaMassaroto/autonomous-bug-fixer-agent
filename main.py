@@ -4,17 +4,9 @@ from state import BugFixerState
 from nodes.analise import analisar_issue_node
 from nodes.execucao import executar_teste_node
 from nodes.correcao import corrigir_codigo_node
+from nodes.github_pr import criar_pr_node
 
 load_dotenv()
-
-# =====================================================================
-# ADICIONE ESTA FUNÇÃO TEMPORÁRIA AQUI (Até criarmos o arquivo do PR real)
-# =====================================================================
-def criar_pr_node_simulado(state: BugFixerState):
-    print("\n--- CAIXA 4 REAL: SIMULANDO ABERTURA DE PULL REQUEST NO GITHUB ---")
-    print("    🚀 Código corrigido e testado! Pronto para merge.")
-    return {}
-# =====================================================================
 
 # 0. inicializa o Grafo utilizando a memoria construida
 workflow = StateGraph(BugFixerState)
@@ -23,7 +15,8 @@ workflow = StateGraph(BugFixerState)
 workflow.add_node("analisar_issue", analisar_issue_node)
 workflow.add_node("executar_teste", executar_teste_node)
 workflow.add_node("corrigir_codigo", corrigir_codigo_node)
-workflow.add_node("criar_pr", criar_pr_node_simulado)
+#workflow.add_node("criar_pr", criar_pr_node_simulado)
+workflow.add_node("criar_pr", criar_pr_node)
 
 # 2. criar as "setas" (edges) -> relacoes entre os nodes
 workflow.add_edge(START, "analisar_issue") # definir primeiro node

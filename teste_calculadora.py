@@ -1,4 +1,3 @@
-# test_calculadora.py
 import pytest
 from calculadora import dividir
 

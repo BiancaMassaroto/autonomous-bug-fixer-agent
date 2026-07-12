@@ -79,31 +79,3 @@ def corrigir_codigo_node(state: BugFixerState):
         return {
             "iterations": tentativas_atuais + 1
         }
-
-    
-    # 4. Atualização de Segurança e Formatação do Retorno
-    #try:
-        #dados_extraidos = json.loads(resposta.content)
-        #novo_codigo = dados_extraidos.get("code_correction", "")
-        
-        #proxima_iteracao = tentativas_atuais + 1
-        #print(f"   -> Correção gerada com sucesso (Tentativa {proxima_iteracao}/3).")
-        
-        # ===================================================================
-        # PULO DO GATO: Reescrever o arquivo local com a correção da IA
-        # ===================================================================
-        #if novo_codigo and caminho_arquivo != "desconhecido":
-            #with open(caminho_arquivo, "w", encoding="utf-8") as arquivo:
-                #arquivo.write(novo_codigo)
-            #print(f"   💾 ARQUIVO REESCRITO COM SUCESSO: {caminho_arquivo}")
-        # ===================================================================
-        
-        #return {
-            #"code_correction": novo_codigo,
-            #"iterations": proxima_iteracao
-        #}
-    #except Exception as e:
-        #print(f"    ⚠️ Erro ao processar a resposta de correção da IA: {e}")
-        #return {
-            #"iterations": tentativas_atuais + 1
-        #}
